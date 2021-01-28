@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/AlienExplosion.gd" type="Script" id=1]
+[ext_resource path="res://GFX/base_standard.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Player_Laser.png" type="Texture" id=3]
+
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 107, 151 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 79, -61 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( -50, -100 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+texture = ExtResource( 3 )

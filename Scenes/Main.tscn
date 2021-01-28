@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Aliens.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Bases.gd" type="Script" id=4]
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="Aliens" parent="." instance=ExtResource( 3 )]
+
+[node name="Bases" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="SpaceShipTimer" type="Timer" parent="."]
+
+[node name="DelayTimer" type="Timer" parent="."]
+
+[node name="Players" type="Node" parent="."]
+[connection signal="timeout" from="SpaceShipTimer" to="." method="_on_SpaceShipTimer_timeout"]

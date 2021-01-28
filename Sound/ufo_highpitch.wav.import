@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ufo_highpitch.wav-fb356fb8322c8e32f5e90c4273596491.sample"
+
+[deps]
+
+source_file="res://Sound/ufo_highpitch.wav"
+dest_files=[ "res://.import/ufo_highpitch.wav-fb356fb8322c8e32f5e90c4273596491.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0
