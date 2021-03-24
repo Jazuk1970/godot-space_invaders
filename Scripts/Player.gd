@@ -38,14 +38,14 @@ func _process(delta):
 		if Input.is_action_pressed("ui_right"):		#Check for move right
 			Velocity.x += 1							#Set the velocity for movement to the right
 		if Input.is_action_pressed("ui_left"):		#Check for move left
-	    	Velocity.x -= 1							#Set the velocity for movement to the left
+			Velocity.x -= 1							#Set the velocity for movement to the left
 		if is_action_just_pressed("ui_select") and (PlayerBullets<PlayerMaxBullets) and OK_To_Shoot: #Check if fire pressed, max bullets not reached and ok to shoot
 			OK_To_Shoot = false						#Set not ok to shoot
 			_spawnBullet()							#Spawn a new bullet
 			$Shoot_Delay.start()					#Start the intershot delay timer
 			$Shoot.play()							#Play the shoot sound
 		if Velocity.length() > 0:					#Check if the player is moving
-	    	Velocity = Velocity.normalized() * Move_Speed	#Calculate the movement based on speed
+			Velocity = Velocity.normalized() * Move_Speed	#Calculate the movement based on speed
 		_updatePosition(Velocity * delta)			#Update the player position based on time elapsed
 
 #Update the player position
@@ -88,11 +88,11 @@ func _on_Player_area_entered(area):
 
 #This function will check if an action has previously been pressed, if not return true. This prevents continuous firing
 func is_action_just_pressed(action):
-    if Input.is_action_pressed(action):							#Check if the specific key is pressed
-        if not pressed.has(action) or not pressed[action]:		#If the key has not been previously pressed
-            pressed[action] = true								#Register the keypress in an array for future checking
-            return true											#Return true, this is the first time the key is pressed
-    else:
-        pressed[action] = false									#The key is no longer pressed, remove the keypress from the array
-    return false												#Return false, the key has not been pressed
+	if Input.is_action_pressed(action):							#Check if the specific key is pressed
+		if not pressed.has(action) or not pressed[action]:		#If the key has not been previously pressed
+			pressed[action] = true								#Register the keypress in an array for future checking
+			return true											#Return true, this is the first time the key is pressed
+	else:
+		pressed[action] = false									#The key is no longer pressed, remove the keypress from the array
+	return false												#Return false, the key has not been pressed
 
